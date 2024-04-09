@@ -39,5 +39,19 @@ public class UserService {
 
 		return myUserRepository.save(existingUser);
 	}
+	public boolean isAdmin(String userName ,String password) {
+		SignUpEntity userId1 = myUserRepository.findByUserName(userName);
+		System.out.println(userId1.getPassword());
+		SignUpEntity userId2 = myUserRepository.findByPassword(password);
+		System.out.println(userId2.getUserName());
+		if(userId1.getPassword().equals(password) && userId2.getUserName().equals(userName) && userId1.getId().equals(userId2.getId()) ) { 
+			if(userId2.getRole().equalsIgnoreCase("admin")) {
+				return true;
+			}else { 
+				return false;
+			}
+		}
+	return false;
+	}
 
 }

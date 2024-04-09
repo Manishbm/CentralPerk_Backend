@@ -11,6 +11,13 @@ public class SignUpEntity {
 	private String emailId;
 	private long phoneNo;
 	private String password;
+	private String role;
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public String getId() {
 		return id;
 	}
