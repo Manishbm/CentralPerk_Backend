@@ -46,6 +46,8 @@ public class MyFoodService {
 		existingFood.setFoodName(foodEntity.getFoodName());
 		existingFood.setVegetarian(foodEntity.isVegetarian());
 		existingFood.setPrice(foodEntity.getPrice());
+		existingFood.setImage(foodEntity.getImage());
+		existingFood.setDescription(foodEntity.getDescription());
 
 		return myFoodRepository.save(existingFood);
 
